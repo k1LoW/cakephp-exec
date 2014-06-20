@@ -30,9 +30,9 @@ class ExecShell extends Shell {
   */
     public function getOptionParser(){
         $parser = parent::getOptionParser();
-        $parser->addOption('result', array(
-            'short' => 'r',
-            'help' => 'result : json_encoded result value filepath',
+        $parser->addOption('output', array(
+            'short' => 'o',
+            'help' => 'output : json_encode(result) output filepath',
         ));
         return $parser;
     }
@@ -71,13 +71,13 @@ class ExecShell extends Shell {
 
         $result = call_user_func_array(array($this->{$className}, $methodName), $decoded);
 
-        if (array_key_exists('result', $this->params)) {
-            if (empty($this->params['result'])) {
-                $resultPath = CACHE . 'result_' . date('YmdHis');
+        if (array_key_exists('output', $this->params)) {
+            if (empty($this->params['output'])) {
+                $outputPath = CACHE . 'result_' . date('YmdHis');
             } else {
-                $resultPath = $this->params['result'];
+                $outputPath = $this->params['output'];
             }
-            file_put_contents($resultPath, json_encode($result));
+            file_put_contents($outputPath, json_encode($result));
         }
     }
 }
