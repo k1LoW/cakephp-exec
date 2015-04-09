@@ -8,4 +8,4 @@ exec() model method in method
 
     <?php
       App::uses('Exec', 'Exec.Lib');
-      Exec.exec('Model', 'Post', 'delete', 3);
+      Exec::exec('Model', 'Post', 'delete', 3);
