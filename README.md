@@ -7,5 +7,5 @@ exec model method in console
 exec() model method in method
 
     <?php
-      App::use('Exec', 'Exec.Lib');
+      App::uses('Exec', 'Exec.Lib');
       Exec.exec('Model', 'Post', 'delete', 3);
