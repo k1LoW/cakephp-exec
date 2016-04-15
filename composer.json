@@ -1,21 +1,33 @@
 {
-	"name": "k1low/exec",
-	"description": "Exec plugin for CakePHP",
-	"type": "cakephp-plugin",
-	"keywords": ["cakephp", "exec"],
-	"homepage": "https://github.com/k1LoW/Exec",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Ken'ichiro Oyama",
-			"homepage": "https://github.com/k1LoW",
-			"role": "Author"
-			}
-	],
-	"require": {
-		"composer/installers": "*"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "3.7.*"
-	}
+    "name": "k1low/exec",
+    "description": "Exec plugin for CakePHP",
+    "type": "cakephp-plugin",
+    "keywords": ["cakephp", "exec"],
+    "homepage": "https://github.com/k1LoW/Exec",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ken'ichiro Oyama",
+            "homepage": "https://github.com/k1LoW",
+            "role": "Author"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.16",
+        "cakephp/cakephp": "~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Exec\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Exec\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
 }
