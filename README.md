@@ -1,5 +1,5 @@
 # Exec plugin for CakePHP
 
-exec model method in console
+Execute Table method in console
 
-    $ cake exec.exec Model Post delete 3
+    $ cake exec.exec Table Post delete 3
