@@ -72,12 +72,11 @@ class ExecShell extends Shell {
         $result = call_user_func_array(array($this->{$className}, $methodName), $decoded);
 
         if (array_key_exists('output', $this->params)) {
-            if (empty($this->params['output'])) {
-                $outputPath = CACHE . 'result_' . date('YmdHis');
-            } else {
-                $outputPath = $this->params['output'];
+            if (!empty($this->params['output'])) {
+                $outputPath = realpath($this->params['output']);
+                file_put_contents($outputPath, json_encode($result), FILE_APPEND);
             }
-            file_put_contents($outputPath, json_encode($result));
+            $this->out($result);
         }
     }
 }
